@@ -15,6 +15,7 @@ void ngui_receive_event(SDL_Event *event) {
   ngui_receiveall_info_prompt(event);
   ngui_receiveall_textlabel  (event);
   ngui_receiveall_button     (event);
+  ngui_receiveall_flowbox    (event);
   ngui_receiveall_textbox    (event);
 }
 
@@ -22,6 +23,7 @@ void ngui_render() {
   ngui_renderall_info_prompt();
   ngui_renderall_textlabel  ();
   ngui_renderall_button     ();
+  ngui_renderall_flowbox    ();
   ngui_renderall_textbox    ();
 }
 

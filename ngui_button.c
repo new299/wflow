@@ -527,7 +527,7 @@ void ngui_render_button(ngui_button_data *d) {
   
     rect.x = d->x-d->x_padding;
     rect.y = d->y-d->y_padding;
-    rect.w = (strlen(d->text))*8+d->x_padding;
+    rect.w = (strlen(d->text))*8+(d->x_padding*2);
     rect.h = 16+d->y_padding;
   
     SDL_RenderDrawRect(ngui_renderer,&rect);
@@ -546,8 +546,8 @@ int ngui_add_button(int x,int y,char *text,void *callback) {
   ngui_buttons[ngui_buttons_size].valid=true;
   ngui_buttons[ngui_buttons_size].x = x;
   ngui_buttons[ngui_buttons_size].y = y;
-  ngui_buttons[ngui_buttons_size].x_padding = 10;
-  ngui_buttons[ngui_buttons_size].y_padding = 10;
+  ngui_buttons[ngui_buttons_size].x_padding = 20;
+  ngui_buttons[ngui_buttons_size].y_padding = 20;
   ngui_buttons[ngui_buttons_size].shine = 0;
   strcpy(ngui_buttons[ngui_buttons_size].text,text);
   ngui_buttons[ngui_buttons_size].callback = callback;
