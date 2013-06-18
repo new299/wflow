@@ -25,7 +25,7 @@ wflow: main.c nunifont.c nunifont.h *.c *.h
 	find . -name *.dylib -exec rm {} \;
 	find . -name *.so* -exec rm {} \;
 	find ./libsdl -name SDL_config.h -exec rm {} \;
-	gcc -g -std=gnu99 $(OURC) $(OPTS) $(EXTRAC) ./utf8proc/utf8proc.c -o wflow -I./libpng -I./utf8proc -I./libvterm/include -I./libsdl/include -L./libsdl/build -L./libpng/.libs -L./libsdl/build/.libs -lpng15 -lSDL2 -lutil -lcrypto -I./libssh2/include -lz -lm
+	gcc -O3 -std=gnu99 $(OURC) $(OPTS) $(EXTRAC) ./utf8proc/utf8proc.c -o wflow -I./libpng -I./utf8proc -I./libvterm/include -I./libsdl/include -L./libsdl/build -L./libpng/.libs -L./libsdl/build/.libs -lpng15 -lSDL2 -lutil -lcrypto -I./libssh2/include -lz -lm
 	
 
 unifont_conv: unifont_conv.c nunifont.c
